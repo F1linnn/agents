@@ -1,0 +1,29 @@
+ui_menu_finding_components <- ui_user_command_class_atom; ui_user_command_class_view_kb; ui_one_argument_command_class;;
+
+ui_menu_finding_components
+=> nrel_main_idtf: 
+	[Из каких компонентов состоит техника?]
+	(* <- lang_ru;; *);
+=> nrel_idtf: 
+	[Запрос поиска компонент техники по параметрам]
+	(* <- lang_ru;; *);;
+
+ui_menu_finding_components
+=> nrel_main_idtf: 
+	[What are the components of the technique?]
+	(* <- lang_en;; *);
+=> nrel_idtf: 
+	[Search query for equipment components by parameters]
+	(* <- lang_en;; *);;
+
+ui_menu_finding_components => ui_nrel_command_template:
+	[*
+		question_find_components _-> ._question_find_components_instance
+			(*
+				_-> ui_arg_1;;
+			*);;
+		._question_find_components_instance _<- question;;
+	*];;
+
+ui_menu_finding_components => ui_nrel_command_lang_template: [Из каких компонентов состоит техника $ui_arg_1?] (* <- lang_ru;; *);;
+ui_menu_finding_components => ui_nrel_command_lang_template: [What are the components of the technique $ui_arg_1?] (* <- lang_en;; *);;
